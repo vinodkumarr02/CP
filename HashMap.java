@@ -19,6 +19,11 @@ public class HashMap<K,V>
     {
         this.capacity=capacity;
     }
+    
+    private void setSize(int size)
+    {
+        this.size=size;
+    }
 
     private void setMap(int capacity)
     {
@@ -61,6 +66,7 @@ public class HashMap<K,V>
         Node<K,V> oldMap[]=map;
 
         setCapacity((oldCapacity<<1)+1);
+        setSize(0);
         setMap(capacity);
 
         for(int i=0;i<oldCapacity;i++)
